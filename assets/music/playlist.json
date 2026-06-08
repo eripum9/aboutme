@@ -1,0 +1,37 @@
+[
+  {
+    "file": "Tamale.mp3",
+    "title": "Tamale",
+    "artist": "Tyler, The Creator",
+    "thumbnail": "WOLF.png",
+    "link": "https://open.spotify.com/track/60b6B2ULC85t4Y5IjZvP7A"
+  },
+  {
+    "file": "Come_On_Lets_Go.mp3",
+    "title": "Come On, Let's Go",
+    "artist": "Tyler, The Creator, Nigo",
+    "thumbnail": "I_know_NIGO!.jpg",
+    "link": "https://open.spotify.com/track/6f44p3Kc4ayD9VtbC9Clkr?si=6sVL0WtcTuO9xJcBp8UPnA"
+  },
+  {
+    "file": "Judge_Judy.wav",
+    "title": "Judge Judy",
+    "artist": "Tyler, The Creator",
+    "thumbnail": "CHROMAKOPIA.jpg",
+    "link": "https://open.spotify.com/track/6ie0uyyvOKTTuIFBMPiNIl?si=1cc384cc7d99445e"
+  },
+  {
+    "file": "Sticky.wav",
+    "title": "Sticky (feat. GloRilla, Sexyy Red & Lil Wayne)",
+    "artist": "Tyler, The Creator, GloRilla, Sexyy Red, Lil Wayne",
+    "thumbnail": "CHROMAKOPIA.jpg",
+    "link": "https://open.spotify.com/track/3tFed7YsjGnIfxeLEQwx3R?si=80ff63f4974a45a3"
+  },
+  {
+    "file": "A_BOY_IS_A_GUNx.wav",
+    "title": "A BOY IS A GUN*",
+    "artist": "Tyler, The Creator",
+    "thumbnail": "IGOR.jpg",
+    "link": "https://open.spotify.com/track/1nXZnTALNXiPlvXotqHm66?si=629aa9412f5e4934"
+  }
+]

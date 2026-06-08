@@ -1,0 +1,476 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About Me</title>
+  <meta name="description" content="Your Favourite Coder, Youtuber and Femboy." />
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0b0d10;
+      --card: rgba(255,255,255,0.04);
+      --card-border: rgba(255,255,255,0.07);
+      --text: #e4e8ef;
+      --muted: #7a8fa3;
+      --accent: #6ee7b7;
+      --accent-glow: rgba(110,231,183,0.35);
+      --radius: 16px;
+      --radius-sm: 10px;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 0%, rgba(110,231,183,0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 50% at 80% 100%, rgba(99,102,241,0.05) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 420px;
+      padding: 48px 20px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      animation: fadeUp 0.6s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .back-link {
+      align-self: flex-start;
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+    .back-link svg { width: 16px; height: 16px; }
+
+    .avatar-ring {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, var(--accent), #818cf8);
+      animation: ringPulse 4s ease-in-out infinite;
+    }
+    @keyframes ringPulse {
+      0%, 100% { box-shadow: 0 0 20px var(--accent-glow); }
+      50%      { box-shadow: 0 0 36px var(--accent-glow), 0 0 60px rgba(110,231,183,0.1); }
+    }
+    .avatar-ring img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--bg);
+    }
+
+    .profile-name {
+      font-size: 1.4rem;
+      font-weight: 700;
+      text-align: center;
+    }
+    .profile-bio {
+      color: var(--muted);
+      font-size: 0.9rem;
+      text-align: center;
+      line-height: 1.5;
+      max-width: 340px;
+    }
+
+    .description-box {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      text-align: center;
+      transition: border-color 0.3s;
+    }
+    .description-box:hover {
+      border-color: rgba(110,231,183,0.15);
+    }
+
+    .social-links {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.92rem;
+      transition: all 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .social-link::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: var(--radius-sm);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .social-link:hover {
+      transform: translateY(-2px);
+      border-color: transparent;
+    }
+
+    .social-link:hover .social-icon {
+      filter: drop-shadow(0 0 8px var(--link-glow, var(--accent-glow)));
+    }
+
+    .social-link:active {
+      transform: translateY(0);
+    }
+
+    .social-link.yt        { --link-color: #ff0000; --link-glow: rgba(255,0,0,0.4); }
+    .social-link.gh        { --link-color: #e4e8ef; --link-glow: rgba(228,232,239,0.3); }
+    .social-link.dc        { --link-color: #5865f2; --link-glow: rgba(88,101,242,0.4); }
+    .social-link.ig        { --link-color: #e1306c; --link-glow: rgba(225,48,108,0.4); }
+    .social-link.roblox    { --link-color: #335fff; --link-glow: rgba(51,95,255,0.4); }
+    .social-link.twitch    { --link-color: #9146ff; --link-glow: rgba(145,70,255,0.4); }
+    .social-link.spotify   { --link-color: #1db954; --link-glow: rgba(29,185,84,0.4); }
+
+    .social-link:hover {
+      background: rgba(255,255,255,0.06);
+      box-shadow: 0 4px 24px -4px var(--link-glow, var(--accent-glow));
+      border-color: var(--link-color, var(--accent));
+    }
+
+    .social-icon {
+      width: 24px;
+      height: 24px;
+      flex-shrink: 0;
+      transition: filter 0.3s ease;
+    }
+
+    .social-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .social-link-label {
+      flex: 1;
+    }
+
+    .social-link-arrow {
+      color: var(--muted);
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: all 0.25s ease;
+    }
+    .social-link:hover .social-link-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .about-footer {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.75rem;
+    }
+
+    .view-counter {
+      opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .view-counter:hover { opacity: 1; }
+    .view-counter img { border-radius: 4px; }
+
+    /* --- Dim overlay --- */
+    .mp-dim {
+      position: fixed;
+      inset: 0;
+      z-index: 8999;
+      background: rgba(0,0,0,0.6);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+    .mp-dim.active {
+      opacity: 1;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    /* --- Tooltip --- */
+    .mp-tooltip {
+      position: fixed;
+      bottom: 110px;
+      right: 20px;
+      z-index: 9001;
+      background: rgba(21,29,37,0.96);
+      border: 1px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 14px 20px;
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.5;
+      max-width: 280px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5), 0 0 20px var(--accent-glow);
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(8px);
+      animation: tooltipIn 0.5s 1.2s ease-out forwards, tooltipBob 2s 1.7s ease-in-out 3;
+      pointer-events: auto;
+    }
+    .mp-tooltip::after {
+      content: '';
+      position: absolute;
+      bottom: -7px;
+      right: 28px;
+      width: 12px;
+      height: 12px;
+      background: rgba(21,29,37,0.96);
+      border-right: 1px solid var(--accent);
+      border-bottom: 1px solid var(--accent);
+      transform: rotate(45deg);
+    }
+    .mp-tooltip .tooltip-icon {
+      margin-right: 8px;
+      font-size: 1.1rem;
+    }
+    .mp-tooltip.hide {
+      animation: tooltipOut 0.3s ease-in forwards;
+    }
+
+    /* --- PC: scale up player while tooltip visible --- */
+    .music-player.highlight {
+      transform: scale(1.08);
+      box-shadow: 0 12px 48px rgba(0,0,0,0.5), 0 0 24px var(--accent-glow), 0 0 0 2px var(--accent);
+      z-index: 9000;
+    }
+
+    @keyframes tooltipIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes tooltipBob {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-4px); }
+    }
+    @keyframes tooltipOut {
+      from { opacity: 1; transform: translateY(0); }
+      to   { opacity: 0; transform: translateY(8px); }
+    }
+
+    @media (max-width: 480px) {
+      .page { padding: 32px 16px 32px; }
+      .avatar-ring { width: 80px; height: 80px; }
+      .profile-name { font-size: 1.2rem; }
+      .mp-tooltip {
+        right: 10px;
+        left: 10px;
+        bottom: 75px;
+        max-width: none;
+        text-align: center;
+        font-size: 0.85rem;
+        padding: 10px 16px;
+      }
+      .mp-tooltip::after {
+        right: calc(50% - 6px);
+      }
+      /* On mobile, don't scale the player — it's already obvious */
+      .music-player.highlight {
+        transform: none;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(110,231,183,0.05);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <a href="/" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+      Back
+    </a>
+
+    <div class="avatar-ring">
+      <img id="avatar-img" src="assets/images/avatar.png" alt="Avatar" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect fill=%22%231a1d23%22 width=%22100%22 height=%22100%22/><text x=%2250%22 y=%2258%22 text-anchor=%22middle%22 fill=%22%236ee7b7%22 font-size=%2240%22>:3</text></svg>'" />
+    </div>
+
+    <h1 class="profile-name">PumpgunYT</h1>
+    <p class="profile-bio">Your Favourite Coder, Youtuber and Femboy. :3</p>
+
+    <div class="description-box">
+      Silly Guy :b
+    </div>
+
+    <div class="social-links">
+      <a href="https://youtube.com/@PumpgunYT" target="_blank" rel="noopener" class="social-link yt">
+        <span class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#ff0000"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.9 31.9 0 0 0 0 12a31.9 31.9 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.5 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></span>
+        <span class="social-link-label">YouTube</span>
+        <span class="social-link-arrow">&rarr;</span>
+      </a>
+
+      <a href="https://github.com/eripum9" target="_blank" rel="noopener" class="social-link gh">
+        <span class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.4-1.3-1.8-1.3-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.3.5-2.4 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.7 18.3 5 18.3 5c.7 1.7.2 2.9.1 3.2.8.8 1.2 1.9 1.2 3.2 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .3z"/></svg></span>
+        <span class="social-link-label">GitHub</span>
+        <span class="social-link-arrow">&rarr;</span>
+      </a>
+
+      <a href="https://discord.gg/qdZQyFZcz2" target="_blank" rel="noopener" class="social-link dc">
+        <span class="social-icon"><svg viewBox="0 0 24 24" fill="currentColor" style="color:#5865f2"><path d="M20.3 4.4a19.6 19.6 0 0 0-4.8-1.5 14 14 0 0 0-.6 1.3 18 18 0 0 0-5.4 0 13 13 0 0 0-.6-1.3A19.5 19.5 0 0 0 4 4.4 20.2 20.2 0 0 0 .5 17.3a19.7 19.7 0 0 0 6 3 14.8 14.8 0 0 0 1.3-2.1 12.8 12.8 0 0 1-2-.9l.5-.4a14 14 0 0 0 12 0l.5.4c-.7.4-1.3.7-2 .9a14.8 14.8 0 0 0 1.3 2.1 19.6 19.6 0 0 0 6-3A20.1 20.1 0 0 0 20.3 4.4zM8 14.7c-1.1 0-2-1-2-2.3s.9-2.3 2-2.3 2.1 1 2 2.3-.8 2.3-2 2.3zm8 0c-1.1 0-2-1-2-2.3s.9-2.3 2-2.3 2.1 1 2 2.3-.9 2.3-2 2.3z"/></svg></span>
+        <span class="social-link-label">Discord</span>
+        <span class="social-link-arrow">&rarr;</span>
+      </a>
+
+      <a href="https://instagram.com/german_femboy123" target="_blank" rel="noopener" class="social-link ig">
+        <img class="social-icon" src="assets/Icons/instagram.png" alt="Instagram">
+        <span class="social-link-label">Instagram</span>
+        <span class="social-link-arrow">&rarr;</span>
+      </a>
+
+      <a href="https://www.roblox.com/users/2268964755/profile" target="_blank" rel="noopener" class="social-link roblox">
+        <img class="social-icon" src="assets/Icons/roblox.svg" alt="Roblox">
+        <span class="social-link-label">Roblox</span>
+        <span class="social-link-arrow">&rarr;</span>
+      </a>
+
+      <a href="https://twitch.tv/mrpumpgungaming" target="_blank" rel="noopener" class="social-link twitch">
+        <img class="social-icon" src="assets/Icons/twitch.png" alt="Twitch">
+        <span class="social-link-label">Twitch</span>
+        <span class="social-link-arrow">&rarr;</span>
+      </a>
+
+      <a href="https://open.spotify.com/user/jn2dft3mk3c88x5r1u63rn2ok" target="_blank" rel="noopener" class="social-link spotify">
+        <img class="social-icon" src="assets/Icons/spotify.png" alt="Spotify">
+        <span class="social-link-label">Spotify</span>
+        <span class="social-link-arrow">&rarr;</span>
+      </a>
+    </div>
+
+    <div class="view-counter">
+      <img src="https://api.visitorbadge.io/api/visitors?path=eripum9.github.io-aboutme&label=Views&countColor=%23263238&labelColor=%231a1d23&style=flat-square" alt="View count" />
+    </div>
+
+    <small class="about-footer">&copy; 2026 PumpgunStudios</small>
+  </div>
+  
+  <div class="mp-dim" id="mp-dim"></div>
+
+  <div class="mp-tooltip" id="mp-tooltip" role="status">
+    <span class="tooltip-icon">&#127925;</span>here you can listen to my favourite songs!
+  </div>
+
+  <div id="music-player" class="music-player">
+    <div class="mp-inner">
+      <img class="mp-thumb" id="mp-thumb" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==" width="56" height="56" alt="Album art" />
+      <div class="mp-info">
+        <span class="mp-title" id="mp-title">No track loaded</span>
+        <span class="mp-artist" id="mp-artist"></span>
+      </div>
+      <div class="mp-controls">
+        <button class="mp-btn" id="mp-prev" aria-label="Previous track">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6 8.5 6V6z"/></svg>
+        </button>
+        <button class="mp-btn mp-btn-play" id="mp-play" aria-label="Play/Pause">
+          <svg class="mp-icon-play" viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="mp-icon-pause" viewBox="0 0 24 24" width="22" height="22" fill="currentColor" style="display:none"><path d="M6 19h4V5H6zm8-14v14h4V5z"/></svg>
+        </button>
+        <button class="mp-btn" id="mp-next" aria-label="Next track">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6z"/></svg>
+        </button>
+        <button class="mp-btn" id="mp-stop" aria-label="Stop">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><rect x="6" y="6" width="12" height="12" rx="1"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mp-progress-bar" id="mp-progress-bar">
+      <div class="mp-progress" id="mp-progress"></div>
+    </div>
+  </div>
+  
+  <script src="js/music-player.js"></script>
+  <script>
+    fetch('https://api.lanyard.rest/v1/users/819569259759796275')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        if (!data.success) return;
+        var u = data.data.discord_user;
+        var url = u.avatar
+          ? 'https://cdn.discordapp.com/avatars/' + u.id + '/' + u.avatar + '.png?size=256'
+          : 'https://cdn.discordapp.com/embed/avatars/' + (Number(u.id) >> 22) % 6 + '.png';
+        var img = document.getElementById('avatar-img');
+        if (img) img.src = url;
+      })
+      .catch(function() {});
+  </script>
+  <script>
+    (function() {
+      var tip = document.getElementById('mp-tooltip');
+      var dim = document.getElementById('mp-dim');
+      var player = document.getElementById('music-player');
+      if (!tip) return;
+
+      // Show dim + highlight after tooltip appears (matches 1.2s animation-delay)
+      setTimeout(function() {
+        if (dim) dim.classList.add('active');
+        if (player) player.classList.add('highlight');
+      }, 1200);
+
+      function dismiss() {
+        tip.classList.add('hide');
+        if (dim) dim.classList.remove('active');
+        if (player) player.classList.remove('highlight');
+        tip.addEventListener('animationend', function() { tip.remove(); }, { once: true });
+      }
+
+      tip.addEventListener('click', dismiss);
+      if (dim) dim.addEventListener('click', dismiss);
+      setTimeout(dismiss, 9000);
+    })();
+  </script>
+</body>
+</html>
