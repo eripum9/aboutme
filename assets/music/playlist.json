@@ -1,4 +1,140 @@
 {
   "version": 2,
-  "albums": []
+  "albums": [
+    {
+      "id": "wolf",
+      "name": "Wolf",
+      "artist": "Tyler, The Creator",
+      "cover": "albums/wolf/cover.webp",
+      "spotify": "open.spotify.com/album/40QTqOBBxCEIQlLNdSjFQB",
+      "tracks": [
+        {
+          "track": 1,
+          "file": "albums/wolf/01-wolf.mp3",
+          "title": "WOLF",
+          "artist": "Tyler, The Creator",
+          "spotify": "https://open.spotify.com/track/2JZpS2sOdJy37oBpn1GuPW?si=66411dd9cbbc4639"
+        },
+        {
+          "track": 2,
+          "file": "albums/wolf/02-jamba-feat-hodgy.mp3",
+          "title": "Jamba (feat. Hodgy)",
+          "artist": "Tyler, The Creator, Hodgy",
+          "spotify": "https://open.spotify.com/track/3Z5pXxCb0O6L53vejFHhqQ?si=332b50eacf624891"
+        },
+        {
+          "track": 3,
+          "file": "albums/wolf/03-cowboy.mp3",
+          "title": "Cowboy",
+          "artist": "Tyler, The Creator",
+          "spotify": "https://open.spotify.com/track/2hjjUjikOa29kImnI5kQPw?si=589aa2809d644b8d"
+        },
+        {
+          "track": 4,
+          "file": "albums/wolf/04-awkward.mp3",
+          "title": "Awkward",
+          "artist": "Tyler, The Creator",
+          "spotify": "https://open.spotify.com/track/6c7l5gpEyCNGr86jsWneGy?si=1c5d789ac83e42b8"
+        },
+        {
+          "track": 5,
+          "file": "albums/wolf/05-domo23.mp3",
+          "title": "Domo23",
+          "artist": "Tyler, The Creator",
+          "spotify": "https://open.spotify.com/track/75kiQfmmuQwgquZ9RLSvuA?si=c6c5a910efba4c11"
+        },
+        {
+          "track": 6,
+          "file": "albums/wolf/06-answer.mp3",
+          "title": "Answer",
+          "artist": "Tyler, The Creator",
+          "spotify": "https://open.spotify.com/track/6rqj2zeKhLy3exkuFi6mSz?si=a19e3a4375b1479e"
+        },
+        {
+          "track": 7,
+          "file": "albums/wolf/07-slater-feat-frank-ocean.mp3",
+          "title": "Slater (feat. Frank Ocean)",
+          "artist": "Tyler, The Creator, Frank Ocean",
+          "spotify": "https://open.spotify.com/track/5wTpnBRTx1HSGQVDZQ2VSh?si=f14137ea4bf4470c"
+        },
+        {
+          "track": 8,
+          "file": "albums/wolf/08-48.mp3",
+          "title": "48",
+          "artist": "Tyler, The Creator",
+          "spotify": "https://open.spotify.com/track/2wK7y55bzry7tUDmDqYaz7?si=ce47ece80423490a"
+        },
+        {
+          "track": 9,
+          "file": "albums/wolf/09-colossus.mp3",
+          "title": "Colossus",
+          "artist": "Tyler, The Creator",
+          "spotify": "https://open.spotify.com/track/5AnVuHLmgipXkFmBvj2Q6H?si=623ee7cc0c8a46cc"
+        },
+        {
+          "track": 10,
+          "file": "albums/wolf/10-partyisntover-campfire-bimmer-feat-frank-ocean-laetitia-sadier.mp3",
+          "title": "PartyIsntOver\u29f8Campfire\u29f8Bimmer (feat. Frank Ocean & Laetitia Sadier)",
+          "artist": "Tyler, The Creator, Frank Ocean, Laetitia Sadier",
+          "spotify": "https://open.spotify.com/track/04QTBqa3IA4ZAKEuqRPzEH?si=f8adf2ec38bd4ed3"
+        },
+        {
+          "track": 11,
+          "file": "albums/wolf/11-ifhy-feat-pharrell.mp3",
+          "title": "IFHY (feat. Pharrell)",
+          "artist": "Tyler, The Creator, Pharrell WIlliams",
+          "spotify": "https://open.spotify.com/track/0NjW4SKY3gbfl2orl1p8hr?si=69e373f67c0c4f16"
+        },
+        {
+          "track": 12,
+          "file": "albums/wolf/12-pigs.mp3",
+          "title": "Pigs",
+          "artist": "Tyler, The Creator",
+          "spotify": "https://open.spotify.com/track/5L4n81Ecf8UE837uJkuoJJ?si=a0b05d984d624920"
+        },
+        {
+          "track": 13,
+          "file": "albums/wolf/13-parking-lot-feat-casey-veggies-mike-g.mp3",
+          "title": "Parking Lot (feat. Casey Veggies & Mike G)",
+          "artist": "Tyler, The Creator, Casey Veggies, Mike G",
+          "spotify": "https://open.spotify.com/track/1UBLglX9fPtTBZSwJj4yVG?si=478300a5febf45d6"
+        },
+        {
+          "track": 14,
+          "file": "albums/wolf/14-rusty-feat-domo-genesis-earl-sweatshirt.mp3",
+          "title": "Rusty (feat. Domo Genesis & Earl Sweatshirt)",
+          "artist": "Tyler, The Creator, Domo Genesis, Earl Sweatshirt",
+          "spotify": "https://open.spotify.com/track/4oQkcfukOHfKsmeoeXQLWC?si=8f443dd5679842a3"
+        },
+        {
+          "track": 15,
+          "file": "albums/wolf/15-trashwang-feat-na-kel-smith-jaspher-dolphin-lucas-l-boy-taco-left-brain-lee-spielman.mp3",
+          "title": "Trashwang (feat. Na-Kel Smith, Jaspher Dolphin, Lucas., L-Boy, Taco, Left Brain & Lee Spielman)",
+          "artist": "Tyler, The Creator, Na-Kel Smith, Jaspher Dolphin, Lucas., L-Boy, Taco, Left Brain, Lee Spielman",
+          "spotify": "https://open.spotify.com/track/2OaPyH3JLuft6iuNFHFJl0?si=1a7ff235f7fa4042"
+        },
+        {
+          "track": 16,
+          "file": "albums/wolf/16-treehome95-feat-coco-o-erykah-badu.mp3",
+          "title": "Treehome95 (feat. Coco O. & Erykah Badu)",
+          "artist": "Tyler, The Creator, Coco O., Erykah Badu",
+          "spotify": "https://open.spotify.com/track/2vLwhcsvRd1f2ETft1kWDN?si=df61613106724428"
+        },
+        {
+          "track": 17,
+          "file": "albums/wolf/17-tamale.mp3",
+          "title": "Tamale",
+          "artist": "Tyler, The Creator",
+          "spotify": "https://open.spotify.com/track/60b6B2ULC85t4Y5IjZvP7A?si=bb53cee1efb84073"
+        },
+        {
+          "track": 18,
+          "file": "albums/wolf/18-lone.mp3",
+          "title": "Lone",
+          "artist": "Tyler, The Creator",
+          "spotify": "https://open.spotify.com/track/6oVFpdtDzSgRLv8rUgFVUW?si=7e8bb1d773c348ad"
+        }
+      ]
+    }
+  ]
 }
